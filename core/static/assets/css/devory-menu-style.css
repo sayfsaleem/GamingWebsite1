@@ -1,0 +1,523 @@
+@font-face {
+    font-family: frivDevoryFont;
+    font-display: swap;
+    src: url(../fonts/frivDevoryFont.ttf);
+}
+
+body,html {
+    margin: 0;
+    background: cyan;
+    text-align: center;
+    font-size: large;
+    font-family: frivDevoryFont, arial, helvetica, sans-serif;
+    color: white;
+    text-shadow: 0.3vmax 0.3vmax 0.3vmax rgba(0, 0, 0, 0.5);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes myAnimation {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+
+.element-to-animate {
+    animation: myAnimation 2s infinite alternate;
+}
+
+h1,
+h2 {
+    font-weight: normal;
+    color: lightgoldenrodyellow;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+    transition: 1s;
+}
+
+a:link {
+    color: orange;
+}
+
+a:visited {
+    color: orangered;
+}
+
+a:hover {
+    color: lemonChiffon;
+}
+
+a:active {
+    color: lemonChiffon;
+}
+
+li {
+    display: inline-block;
+    margin-right: 1vmax;
+}
+
+#welcome {
+    padding: 2vmax;
+}
+
+#joke,
+#jokeAnswer {
+    color: yellow;
+    background-color: fireBrick;
+    cursor: pointer;
+    font-size: 4vmin;
+    padding: 1vmax;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    box-shadow: 0.5vmax 0.5vmax 0.5vmax rgba(0, 0, 0, 0.4);
+}
+
+#joke {
+    border-radius: 1vmax 1vmax 0 0;
+    margin-top: 15vh;
+}
+
+#jokeAnswer {
+    border-radius: 0 0 1vmax 1vmax;
+    margin-bottom: 2vh;
+    padding-top: 0;
+}
+
+#riddle,
+#riddleAnswer {
+    border-radius: 1vmax 1vmax 0 0;
+    color: yellow;
+    background-color: darkGreen;
+    cursor: pointer;
+    font-size: 4vmin;
+    padding: 1vmax;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    box-shadow: 0.5vmax 0.5vmax 0.5vmax rgba(0, 0, 0, 0.4);
+}
+
+#riddleAnswer {
+    border-radius: 0 0 1vmax 1vmax;
+    margin-bottom: 2vh;
+    padding-top: 0;
+}
+
+#funFact {
+    border-radius: 1vmax 1vmax 1vmax 1vmax;
+    color: yellow;
+    background-color: teal;
+    font-size: 4vmin;
+    margin-bottom: 10vh;
+    padding: 1vmax;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    box-shadow: 0.5vmax 0.5vmax 0.5vmax rgba(0, 0, 0, 0.4);
+}
+
+#gamesBlockHeader {
+    letter-spacing: 1vw;
+    padding: 1vh 1vw 0.7vh 1vw;
+    font-size: 4vmin;
+    /* "3vmax" ...issues with vmax on mobile friendly test (hugely long page used by Google to test?) */
+}
+
+.blink {
+    animation: blink 0.1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+#gamesBlockFooter {
+    font-size: 4vmin;
+    padding: 1vw;
+    padding-top: 20vh;
+}
+
+#gamesBlock {
+    margin: 0 0 15vh 0;
+    overflow: hidden;
+    padding-bottom: 2vh;
+    opacity: 0;
+}
+
+.gameIconContainer {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0.5vmax 0.5vmax 0.5vmax rgba(0, 0, 0, 0.4);
+    text-shadow: none;
+    width: 150px;
+    height: 150px;
+    margin: 3px 5px 3px 5px;
+    background-color: lightSeaGreen;
+}
+
+.gameIconContainer:hover {
+    border-color: white yellow orange orangered;
+}
+
+#logo {
+    margin: 20px 0 20px 0;
+    width: 27vw;
+    height: 19vw;
+    cursor: pointer;
+    /* transition: 2s; causes judder*/
+    animation: shake 0.5s 20s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@media screen and (orientation:portrait) {
+    #logo {
+        width: 96vw;
+        height: 24vw;
+    }
+}
+
+/* for very small mobile screens */
+
+@media only screen and (max-width: 320px) {
+    .gameIconContainer {
+        width: 288px;
+        height: 80px;
+    }
+    #logo {
+        width: 100vw;
+        height: 25vw;
+    }
+}
+
+.gameIcon {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    transition: 1s;
+}
+
+.gameIcon:hover {
+    filter: brightness(150%);
+}
+
+.gameIconName {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    bottom: 15%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: lightgoldenrodyellow;
+    border-radius: 0.5vmax;
+    pointer-events: none;
+    line-height: 100%;
+}
+
+#menuBar {
+    position: relative;
+    /* background: rgba(0, 0, 0, 0.5); */
+    padding: 0.2vmax;
+    margin: 1vh 0 1vh 0;
+    opacity: 0;
+    /* display: none; */
+}
+
+#menuBarCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.menuBarItem {
+    display: inline-block;
+    font-size: 2vmin;
+    background: linear-gradient(179deg, white 0%, white 5%, yellow 15%, orange 50%, orange 70%, orangered 90%, red 100%);
+    border-radius: 1vmax;
+    margin: 0.2vmax;
+    padding: 0.5vmax;
+    cursor: pointer;
+    transition: filter 1s;
+    box-shadow: 0.5vmax 0.5vmax 0.5vmax rgba(0, 0, 0, 0.4);
+}
+
+.menuBarItem:hover {
+    filter: hue-rotate(-50deg);
+}
+
+@media screen and (orientation:portrait) {
+    #menuBar {
+        display: none;
+    }
+}
+
+#results {
+    padding-bottom: 1vh;
+    font-size: 2vmin;
+    color: yellow;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, -1px, 0);
+        filter: hue-rotate(360deg)
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 1px, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, -3px, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 3px, 0);
+        filter: hue-rotate(0deg)
+    }
+}
+
+#adSection {
+    background: rgba(0, 0, 0, 0.3);
+    padding-bottom: 1vh;
+    margin-bottom: 2vh;
+    box-shadow: 0.5vmax 0.5vmax 0.5vmax rgba(0, 0, 0, 0.4);
+    min-height: 322px;
+    /* hopefully help with cls */
+}
+
+#adText {
+    font-size: calc(10px + 0.7vmax);
+    margin: 0;
+    padding: 1vh 0 0.5vh 0;
+    letter-spacing: 1vmax;
+}
+
+.changeConsent {
+    cursor: pointer;
+}
+
+#footerImage {
+    background-size: cover;
+    background-image: url("../gfx/footerBackground1Min.svg");
+    width: 100%;
+    height: 100vw;
+}
+
+#footerText {
+    font-size: 3vmin;
+    background-image: linear-gradient(#555577, #333355);
+    padding: 3vh 0 3vh 0;
+}
+
+#debugPanel {
+    display: none;
+    text-align: left;
+    padding: 5px;
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+    font-size: 20px;
+    background-color: red;
+}
+
+/*
+        .hide {
+            display: none;
+        }
+        */
+
+#catXmas,
+#catHalloween {
+    display: none;
+}
+
+.blink {
+    animation: blink 0.1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+#devoryGamesContent {
+    display: none;
+    font-size: 0;
+    margin-bottom: 3vh;
+}
+
+#scrollToPlay {
+    display: none;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 4vw;
+    letter-spacing: 2vw;
+    padding-top: 40vh;
+    background-color: indigo;
+}
+
+#textualContent {
+    padding-top: 30vh;
+    padding-bottom: 10vh;
+    background-color: #333355;
+}
+
+/*
+DEVORY SECTION START v0.8
+*/
+
+.pixelated {
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.gameThumbContainer,
+.gameThumbContainerPuzzle,
+.gameThumbContainerExtra,
+.gameThumbContainerTest,
+.gameThumbContainerMini {
+    position: relative;
+    display: inline-block;
+    font-size: calc(12px - 0.35vmin);
+    border-radius: 30px 70px 30px 50px;
+    border: 5px outset #aaf;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 0.5vmin 0.5vmin 1.2vmin rgba(0, 0, 0, 1);
+    width: 360px;
+    height: 100px;
+    max-width: 85vw;
+    max-height: 23.6vw;
+    box-shadow: 2vmin 2vmin 2vmin rgba(0, 0, 0, 0.4);
+    /* to avoid flickering (seen on Chrome on Android) */
+    transform: translate3d(0, 0, 0);
+}
+
+.navy {
+    color: navy;
+}
+
+.brown {
+    color: saddleBrown;
+}
+
+.cyan {
+    color: cyan;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.paleYellow {
+    color: lightYellow;
+}
+
+.gameThumbGenColorPink,
+.gameThumbGenColorBlue,
+.gameThumbGenColorGreen,
+.gameThumbGenColorCyan,
+.gameThumbGenColorYellow,
+.gameThumbGenColorOrange,
+.gameThumbGenColorClear {
+    position: absolute;
+    display: inline-block;
+    pointer-events: none;
+    z-index: 10;
+    background-image: linear-gradient(transparent, hotPink, hotPink);
+    bottom: 0;
+    font-size: 14px;
+    width: 95%;
+    height: 23%;
+    padding: 0 15px 0 5px;
+    vertical-align: bottom;
+}
+
+.gameThumbGenColorBlue {
+    background-image: linear-gradient(transparent, dodgerBlue, dodgerBlue);
+}
+
+.gameThumbGenColorGreen {
+    background-image: linear-gradient(transparent, forestGreen, forestGreen);
+}
+
+.gameThumbGenColorCyan {
+    background-image: linear-gradient(transparent, cyan, cyan);
+}
+
+.gameThumbGenColorYellow {
+    background-image: linear-gradient(transparent, yellow, yellow);
+}
+
+.gameThumbGenColorOrange {
+    background-image: linear-gradient(transparent, orange, orangered, orange, orangered);
+}
+
+.gameThumbGenColorClear {
+    background-image: linear-gradient(transparent, midnightBlue);
+}
+
+.gameThumbContainer:nth-child(even) {
+    border-color: #ccf;
+}
+
+.gameThumbContainerPuzzle {
+    border: 5px outset lightYellow;
+}
+
+.gameThumbContainerExtra {
+    border: 5px outset lime;
+}
+
+.gameThumbContainerTest {
+    border: 5px outset red;
+}
+
+.gameThumbContainerMini {
+    width: 150px;
+    height: 150px;
+    max-width: none;
+    max-height: none;
+    border-radius: 20px;
+    border: 6px outset #ddf;
+    margin: 0.4vmax;
+}
+
+.gameThumbContainerMini:hover {
+    filter: brightness(1.5);
+}
+
+#gfxSpeedSquare {
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+    padding: 1vmin;
+    font-size: 3vmin;
+    color: white;
+    text-align: left;
+    background-image: radial-gradient(transparent, transparent);
+}
+
+/*
+DEVORY SECTION END
+*/

@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx" translate="no" class="element-to-animate">
+
+<head>
+
+    <meta charset="utf-8">
+
+
+
+    <title>Leazy Games | 500 Online Games | Leazy Games online</title>
+    <meta name=keywords content="Online Games, Leazy Games,free online games">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=description content="Leazy games is the place where 500 plus free online games available to play online from various sources like friv,juegos juegos,crazygames">
+    <meta name=robots content="index, follow">
+    <meta name=author content="https://leazygames.com/">
+    <meta name=msapplication-TileColor content="#9900cc">
+    <meta name=theme-color content="#ffffff">
+
+    <meta property="og:site_name" content="Leazy Games">
+    <meta property="og:title" content="Leazy Games | 500 Online Games | Leazy Games online">
+    <meta property="og:url" content="https://leazygames.com/">
+    <meta property="og:image" content="https://leazygames.com/static/assets/logo.png">
+    <meta property="og:description" content="Leazy games is the place where 500 plus free online games available to play online from various sources like friv,juegos juegos,crazygames">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="{%static 'assets/css/devory-menu-style.css'%}">
+    <link rel="canonical" href="https://leazygames.com/">
+    <link rel="preload" href="assets/fonts/frivDevoryFont.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/logo.png">
+    <link rel="mask-icon" href="/static/assets/logo.png" color="#9900cc">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Leazy Games",
+            "url": "https://leazygames.com/",
+            "logo": "https://leazygames.com/static/assets/logo.png"
+        }
+    </script>
+    <audio id="background-audio" preload="auto" loop autoplay>
+    <source src="{%static 'assets/music.mp3'%}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio id="hover-audio">
+    <source src="{%static 'assets/ef.mp3'%}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</head>
+
+<body oncontextmenu="return false" ondragstart="return false" class="element-to-animate">
+    <!--  onselectstart="return false" -->
+
+    <div id=gfxSpeedSquare></div>
+
+    <div id=scrollToPlay>
+
+        <div class=blink>▼ SCROLL TO PLAY! ▼</div>
+
+    </div>
+
+
+    <div id=logoContainer><img id=logo src="{%static 'assets/logo.png'%}" alt=Friv-2017 ></div>
+    <h1 id=gamesBlockHeader>Top Tier Free Online Games</h1>
+
+
+
+
+  <div id="devoryGamesContent" style="display: block;">
+    {% for game in Games %}
+        <div class="gameThumbContainerMini">
+            <div class="gameThumbShine"></div>
+            <div class="gameThumbGenColorClear">{{game.name}}</div><a href="/play/{{ game.game_link|cut:"https://www.crazygames.com/game/" }}/">
+                <img width="150" height="150" loading="lazy" class="gameThumb " src="{{game.link}}" onmouseover="japSound()" alt="Attack-Of-The-Drones"></a>
+            </div>
+    {% endfor %}
+</div>
+    <div id=gamesBlockFooter>If you have any concern feel free to contact us, Developed and Managed by <a href="https://www.elitechain.co" target="_blank">Elitechain LLC</a></div>
+    <!--rename -->
+
+    <main id=textualContent>
+        <h1>That's All,Yes Leazy Games provides you over 500 games</h1>
+        <p>We're Leazy Games, the game-changers in the digital world. Our game catalog boasts over 500 titles, and trust us, you won't need to jump through hoops to enjoy them. No registration hassles or pesky video ads here. We get straight to the fun.
+
+Our categories are as diverse as your interests: Whether you crave heart-pounding adventures, high-speed car races, brain-teasing puzzles, or tactical strategy challenges, we've got you covered. From action-packed shooters to mind-bending 3D experiences, there's something for everyone.
+
+But here's the kicker – we don't just throw games at you; we curate experiences. Our team sweats the small stuff to ensure every game runs smoothly on today's tech, and we're constantly adding fresh titles to keep your gaming appetite satisfied.
+
+We despise those frustrating moments when you're stuck in a lackluster game, and that's why we're selective. We bring you quality entertainment, not one-minute wonders. Our games come from various sources, so if you ever encounter access issues, don't fret – there's always something fun waiting for you.
+
+So, why wait? Dive into our world of digital delights and start gaming like never before. At Leazy Games, we're not just about games; we're about the gaming experience.</p>
+        <article>
+            <h2>Little about Leazy Games</h2>
+            <p>Leazy Games, it's not just a random jumble of letters; it's your gateway to the digital world of gaming. Our journey began in 2022 with the birth of Leazy Games and shortly followed by Leazygames.com, both masterminded by our brilliant team. so be a Leazy Legend and be careful! Happy gaming!</p>
+        </article>
+    </main>
+<script>
+    function japSound() {
+        const hoverAudio = document.getElementById('hover-audio');
+        hoverAudio.play();
+    }
+</script>
+</body>
+
+</html>
